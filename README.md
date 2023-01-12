@@ -36,7 +36,7 @@ print("Swapped values are:",a,b)
 ```
 
 ## OUTPUT:
-/home/sec/Pictures/Screenshots/Screenshot from 2023-01-12 20-43-33.png
+file:///home/sec/Pictures/Screenshots/Screenshot%20from%202023-01-12%2020-43-33.png![image](https://user-images.githubusercontent.com/120643262/212104996-969fac1c-9c28-48ff-849b-f8cb5ed0437e.png)
 
 ## RESULT:
 Thus the swapping of two values are successfully executed
