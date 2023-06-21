@@ -51,7 +51,7 @@ while True:
   print(s.recv(1024).decode())
   s.send("Acknowledgement Recived".encode()
 ```
-~~~
+~~~ python
 ex2
 ### CLIENT:
 import socket
@@ -80,9 +80,9 @@ while True:
   print(s.recv(1024).decode())
   s.send("acknowledgement recived from the server".enc
 ~~~
-~~~
+~~~ python
 ex3
-CLIENT:
+### CLIENT:
 import socket
 from datetime import datetime
 s=socket.socket()
@@ -96,13 +96,37 @@ code()) ack=c.recv(1024).decode()
 if ack:
   print(ack)
 c.close()
-SERVER:
+### SERVER:
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
+~~~
+~~~ python
+ex4
+CLIENT:
+import socket
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
+c,addr=s.accept()
+address={"165.165.80.80":"6A:08:AA:C2","165.165.79.1":"8A:BC:E3:FA"};
+while True:
+  ip=c.recv(1024).decode()
+  try:
+    c.send(address[ip].encode())
+  except KeyError:
+    c.send("Not Found".encode())
+### SERVER:
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+while True:
+  ip=input("Enter logical Address : ")
+  s.send(ip.encode())
+  print("MAC Address",s.recv(1024).decode())
 ~~~
 ## OUTPUT:
 file:///home/sec/Pictures/Screenshots/Screenshot%20from%202023-01-12%2020-43-33.png![image](https://user-images.githubusercontent.com/120643262/212104996-969fac1c-9c28-48ff-849b-f8cb5ed0437e.png)
