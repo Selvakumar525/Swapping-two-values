@@ -59,6 +59,13 @@ while True:
 ```
 ~~~ python
 ex2 Sliding window Pr
+ALGORITHM:
+1. Start the program. 
+2. Get the frame size from the user
+3. To create the frame based on the user request.
+4. To send frames to server from the client side. 
+5. If your frames reach the server it will send ACK signal to client otherwise it will send NACK signal to client.
+6. Stop the program
 ### CLIENT:
 import socket
 s=socket.socket()
@@ -88,6 +95,26 @@ while True:
 ~~~
 ~~~ python
 ex3 Study ofsocket programming with client serve
+ALGORITHM:
+Server:
+1. Create a server socket and bind it to port.
+2. Listen for new connection and when a connection arrives, accept it.
+3. Send server‟s date and time to the client. 
+4. Read client‟s IP address sent by the client.
+5. Display the client details. 
+6. Repeat steps 2-5 until the server is terminated.
+7. Close all streams. 
+8. Close the server socket.
+9. Stop.
+  Client:
+1. Create a client socket and connect it to the server‟s port number.
+2. Retrieve its own IP address using built-in function.
+3. Send its address to the server.
+4. Display the date & time sent by the server.
+5. Close the input and output streams. 
+6. Close the client socket.
+7. Stop.
+
 ### CLIENT:
 import socket
 from datetime import datetime
@@ -112,6 +139,19 @@ s.send("acknowledgement recived from the server".encode())
 ~~~
 ~~~ python
 ex4 Simulating ARP
+ALGORITHM:
+Client:
+1. Start the program
+2. Using socket connection is established between client and server.
+3. Get the IP address to be converted into MAC address. 
+4. Send this IP address to server.
+5. Server returns the MAC address to client.
+  Server:
+1. Start the program
+2. Accept the socket which is created by the client.
+3. Server maintains the table in which IP and corresponding MAC addresses are stored.
+4. Read the IP address which is send by the client.
+5. Map the IP address with its MAC address and return the MAC address to client
 CLIENT:
 import socket
 s=socket.socket()
@@ -136,6 +176,18 @@ while True:
 ~~~
 ~~~ python
 ex5 Simulating RARP
+ALGORITHM:
+Client
+1. Start the program
+2. Using datagram sockets UDP function is established.
+3. Get the MAC address to be converted into IP address.
+4. Send this MAC address to server. 
+5. Server returns the IP address to client.
+Server
+1. Start the program.
+2. Server maintains the table in which IP and corresponding MAC addresses are stored.
+3. Read the MAC address which is send by the client. 
+4. Map the IP address with its MAC address and return the IP address to client
 CLIENT:
 import socket
 s=socket.socket()
@@ -160,6 +212,18 @@ while True:
 ~~~
 ~~~ python
 ex 6 Simulating PING command
+ALGORITHM:
+Step 1: start the program. 
+Step 2: Include necessary package in java. 
+Step 3: To create a process object p to implement the ping command. 
+Step 4: declare one Buffered Reader stream class object. 
+Step 5: Get the details of the server
+5:1: length of the IP address.
+5:2: time required to get the details.
+5:3: send packets, receive packets and lost packets.
+5.4: minimum, maximum and average times.
+Step 6: print the results.
+Step 7: Stop the program
 CLIENT:
 import socket
 from pythonping import ping
@@ -183,6 +247,13 @@ while True:
   ~~~
 ~~~ python
 ex 7 Simulating TRACERO
+1. Start the program.
+2. Get the frame size from the user. 
+3. To create the frame based on the user request. 
+4. To send frames to server from the client side.
+5. If your frames reach the server, it will send ACK signal to client otherwise it will send NACK signal to client.
+6. Stop the program
+### program 
 from scapy.all import*
 target = ["www.google.com"]
 result, unans = traceroute(target,maxttl=32)
@@ -190,6 +261,11 @@ print(result,unans)
 ~~~
 ~~~ python
 ex 8 Application using TCP Sockets Creation for Echo client and echo server
+ALGORITHM:
+1. Import the necessary modules in python
+2. Create a socket connection to using the socket module.
+3. Send message to the client and receive the message from the client using the Socket module in server
+.4. Send and receive the message using the send function in socket
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
@@ -209,6 +285,11 @@ while True:
 ~~~
 ~~~ python
 ex 9 Application using TCP Sockets Creation for C
+ALGORITHM:
+1. Import the necessary modules in python
+2. Create a socket connection to using the socket module.
+3. Send message to the client and receive the message from the client using the Socket module in server
+4. Send and receive the message using the send function in socket.
 CLIENT:
 import socket
 s=socket.socket()
@@ -231,6 +312,12 @@ while True:
   ~~~
 ~~~ python
 ex 10 Application using TCP Sockets Creation for
+ALGORITHM:
+1. Import the necessary python modules.
+2. Create a socket connection using socket module. 
+3. Send the message to write into the file to the client file.
+4. Open the file and then send it to the client in byte format.
+5. In the client side receive the file from server and then write the content into it                                                                                     
 CLIENT:
 import socket
 s = socket.socket()
