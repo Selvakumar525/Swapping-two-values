@@ -175,6 +175,13 @@ while True:
   ip=input("Enter the website you want to ping ")
   s.send(ip.encode()) print(s.recv(1024).decode())
   ~~~
+~~~ python
+ex 7
+from scapy.all import*
+target = ["www.google.com"]
+result, unans = traceroute(target,maxttl=32)
+print(result,unans)
+~~~
 ## OUTPUT:
 file:///home/sec/Pictures/Screenshots/Screenshot%20from%202023-01-12%2020-43-33.png![image](https://user-images.githubusercontent.com/120643262/212104996-969fac1c-9c28-48ff-849b-f8cb5ed0437e.png)
 
