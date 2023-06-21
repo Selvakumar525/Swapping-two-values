@@ -24,7 +24,7 @@ End the program
 
 ## PROGRAM:
 ```python
-ex1
+ex1 Stop and Wait Protocol
 #Program to swap two values.
 #Developed by: Selva Kumar
 #RegisterNumber:22009007
@@ -52,7 +52,7 @@ while True:
   s.send("Acknowledgement Recived".encode()
 ```
 ~~~ python
-ex2
+ex2 Sliding window Pr
 ### CLIENT:
 import socket
 s=socket.socket()
@@ -81,7 +81,7 @@ while True:
   s.send("acknowledgement recived from the server".enc
 ~~~
 ~~~ python
-ex3
+ex3 Study ofsocket programming with client serve
 ### CLIENT:
 import socket
 from datetime import datetime
@@ -105,7 +105,7 @@ print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 ~~~
 ~~~ python
-ex4
+ex4 Simulating ARP
 CLIENT:
 import socket
 s=socket.socket()
@@ -129,7 +129,7 @@ while True:
   print("MAC Address",s.recv(1024).decode())
 ~~~
 ~~~ python
-ex5
+ex5 Simulating RARP
 CLIENT:
 import socket
 s=socket.socket()
@@ -153,7 +153,7 @@ while True:
   print("Logical Address",s.recv(1024).decode())
 ~~~
 ~~~ python
-ex 6
+ex 6 Simulating PING command
 CLIENT:
 import socket
 from pythonping import ping
@@ -176,14 +176,14 @@ while True:
   s.send(ip.encode()) print(s.recv(1024).decode())
   ~~~
 ~~~ python
-ex 7
+ex 7 Simulating TRACERO
 from scapy.all import*
 target = ["www.google.com"]
 result, unans = traceroute(target,maxttl=32)
 print(result,unans)
 ~~~
 ~~~ python
-ex 8
+ex 8 Application using TCP Sockets Creation for Echo client and echo server
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
@@ -202,7 +202,7 @@ while True:
   c.send(ClientMessage.encode())
 ~~~
 ~~~ python
-ex 9
+ex 9 Application using TCP Sockets Creation for C
 CLIENT:
 import socket
 s=socket.socket()
@@ -224,7 +224,7 @@ while True:
   c.send(msg.encode())
   ~~~
 ~~~ python
-ex 10
+ex 10 Application using TCP Sockets Creation for
 CLIENT:
 import socket
 s = socket.socket()
