@@ -24,15 +24,32 @@ End the program
 
 ## PROGRAM:
 ```python
+ex1
 #Program to swap two values.
 #Developed by: Selva Kumar
 #RegisterNumber:22009007
-a=float(input())
-b=float(input())
-temp=b
-b=a
-a=temp
-print("Swapped values are:",a,b)
+### CLIENT:
+import socket
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5) c,addr=s.accept()
+while True:
+  i=input("Enter a data: ")
+  c.send(i.encode())
+  ack=c.recv(1024).decode()
+  if ack:
+    print(ack)
+    continue
+  else:
+    c.close()
+    break
+### SERVER:
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+while True:
+  print(s.recv(1024).decode())
+  s.send("Acknowledgement Recived".encode()
 ```
 
 ## OUTPUT:
