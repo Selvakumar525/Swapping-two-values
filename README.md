@@ -80,6 +80,30 @@ while True:
   print(s.recv(1024).decode())
   s.send("acknowledgement recived from the server".enc
 ~~~
+~~~
+ex3
+CLIENT:
+import socket
+from datetime import datetime
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
+c,addr=s.accept()
+print("Client Address : ",addr)
+now = datetime.now()
+c.send(now.strftime("%d/%m/%Y %H:%M:%S").en
+code()) ack=c.recv(1024).decode()
+if ack:
+  print(ack)
+c.close()
+SERVER:
+import socket
+s=socket.socket()
+s.connect(('localhost',8000))
+print(s.getsockname())
+print(s.recv(1024).decode())
+s.send("acknowledgement recived from the server".encode())
+~~~
 ## OUTPUT:
 file:///home/sec/Pictures/Screenshots/Screenshot%20from%202023-01-12%2020-43-33.png![image](https://user-images.githubusercontent.com/120643262/212104996-969fac1c-9c28-48ff-849b-f8cb5ed0437e.png)
 
