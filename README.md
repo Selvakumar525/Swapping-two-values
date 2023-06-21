@@ -223,6 +223,50 @@ while True:
   msg=input("Server > ")
   c.send(msg.encode())
   ~~~
+~~~ python
+ex 10
+CLIENT:
+import socket
+s = socket.socket()
+host = socket.gethostname()
+port = 60000
+s.connect((host, port))
+s.send("Hello server!".encode())
+with open('received_file', 'wb') as f:
+  while True:
+    print('receiving data...')
+    data = s.recv(1024)
+    print('data=%s', (data))
+    if not data:
+      break
+  f.write(data)
+f.close()
+print('Successfully get the file')
+s.close()
+print('connection closed')
+SERVER:
+importsocket
+port = 60000
+s = socket.socket()
+host = socket.gethostname()
+s.bind((host, port))
+s.listen(5)
+while True:
+  conn, addr = s.accept()
+  data = conn.recv(1024)
+  print('Server received', repr(data))
+  filename='mytext.txt' f = open(filename,'rb')
+  l = f.read(1024)
+  while (l):
+    conn.send(l)
+    print('Sent ',repr(l))
+    l = f.read(1024)
+f.close()
+print('Done sending')
+conn.send('Thank you for connecting'.encode())
+conn.close()
+
+~~~
 ## OUTPUT:
 file:///home/sec/Pictures/Screenshots/Screenshot%20from%202023-01-12%2020-43-33.png![image](https://user-images.githubusercontent.com/120643262/212104996-969fac1c-9c28-48ff-849b-f8cb5ed0437e.png)
 
